@@ -1,20 +1,23 @@
 <?php
+// Konfiguracja bazy danych
+define('DB_HOST', 'localhost');
+define('DB_USER', 'root');
+define('DB_PASS', '');
+define('DB_NAME', 'zapisy_nart');
 
-// Database configuration
-$db_host = 'localhost';
-$db_user = 'your_username';
-$db_password = 'your_password';
-$db_name = 'your_database';
+// Konfiguracja emaila
+define('EMAIL_FROM', 'noreply@zapisy.uciekajzamiasto.pl');
+define('EMAIL_NAME', 'Zapisy na Testy Nart');
 
-// Email settings
-$email_from = 'noreply@example.com';
-$email_host = 'smtp.example.com';
-$email_user = 'your_email_user';
-$email_pass = 'your_email_password';
-$email_port = 587;
+// Bezpieczeństwo
+define('SESSION_TIMEOUT', 3600);
+define('ADMIN_USERNAME', 'admin');
+define('ADMIN_PASSWORD', '$2y$10$FvXqp2PwwfKsBXc3.9uB9eXqV8L/uZwY1XlPlXhVfp5y1TwBvyM7K'); // admin123
 
-// Security constants
-define('APP_KEY', 'your_application_key');
-define('APP_DEBUG', true);
-
+// Połączenie z bazą
+$conn = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
+if ($conn->connect_error) {
+    die('Błąd połączenia: ' . $conn->connect_error);
+}
+$conn->set_charset('utf8mb4');
 ?>
