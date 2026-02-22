@@ -1,0 +1,27 @@
+# Zależności
+vendor/
+node_modules/
+
+# Pliki konfiguracyjne z danymi produkcyjnymi
+# (skopiuj config.php.example → config.php i uzupełnij dane)
+# config.php  # odkomentuj jeśli chcesz pominąć config.php w repo
+
+# Cache i logi PHP
+*.log
+*.cache
+
+# Pliki systemowe macOS
+.DS_Store
+
+# Pliki systemowe Windows
+Thumbs.db
+desktop.ini
+
+# Pliki IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Pliki tymczasowe eksportu
+/tmp/
