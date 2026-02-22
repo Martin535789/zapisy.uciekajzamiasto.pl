@@ -1,0 +1,240 @@
+/* ============================================================
+   styles.css – Niestandardowe style dla systemu zapisów
+   ============================================================ */
+
+/* ---------- Kolory i zmienne ---------- */
+:root {
+    --primary:    #1a73e8;
+    --primary-dk: #1558b0;
+    --accent:     #e8f0fe;
+    --success:    #28a745;
+    --danger:     #dc3545;
+    --text:       #333;
+    --muted:      #6c757d;
+    --bg:         #f8f9fa;
+    --white:      #fff;
+    --radius:     0.5rem;
+    --shadow:     0 4px 18px rgba(0,0,0,.10);
+}
+
+/* ---------- Base ---------- */
+body {
+    font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+}
+
+/* ---------- Navbar ---------- */
+.navbar-brand {
+    font-weight: 700;
+    font-size: 1.3rem;
+    letter-spacing: .02em;
+}
+
+/* ---------- Hero ---------- */
+.hero {
+    background: linear-gradient(135deg, #1a73e8 0%, #0d47a1 100%);
+    color: var(--white);
+    padding: 4rem 0 3rem;
+    margin-bottom: 2.5rem;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: clamp(1.6rem, 4vw, 2.8rem);
+    font-weight: 800;
+    margin-bottom: .75rem;
+}
+
+.hero p {
+    font-size: 1.1rem;
+    opacity: .9;
+    max-width: 620px;
+    margin: 0 auto;
+}
+
+/* ---------- Counter badge ---------- */
+.counter-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: .5rem;
+    background: rgba(255,255,255,.18);
+    border: 1px solid rgba(255,255,255,.35);
+    border-radius: 2rem;
+    padding: .45rem 1.2rem;
+    margin-top: 1.2rem;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.counter-badge.full {
+    background: rgba(220,53,69,.35);
+    border-color: rgba(220,53,69,.5);
+}
+
+/* ---------- Status pill ---------- */
+.status-pill {
+    display: inline-block;
+    padding: .3rem .9rem;
+    border-radius: 2rem;
+    font-size: .78rem;
+    font-weight: 700;
+    letter-spacing: .05em;
+    text-transform: uppercase;
+}
+
+.status-pill.open   { background: #d4edda; color: #155724; }
+.status-pill.closed { background: #f8d7da; color: #721c24; }
+
+/* ---------- Cards ---------- */
+.card {
+    border: none;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    margin-bottom: 1.5rem;
+}
+
+.card-header-custom {
+    background: var(--primary);
+    color: var(--white);
+    border-radius: var(--radius) var(--radius) 0 0 !important;
+    padding: 1rem 1.5rem;
+    font-weight: 700;
+    font-size: 1.05rem;
+}
+
+/* ---------- Form ---------- */
+.form-label {
+    font-weight: 600;
+    font-size: .9rem;
+    margin-bottom: .3rem;
+}
+
+.form-control, .form-select {
+    border-radius: .375rem;
+    border: 1.5px solid #d1d5db;
+    transition: border-color .2s, box-shadow .2s;
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 .2rem rgba(26,115,232,.2);
+}
+
+.btn-primary {
+    background: var(--primary);
+    border-color: var(--primary);
+    font-weight: 700;
+    padding: .6rem 2rem;
+    border-radius: var(--radius);
+    transition: background .2s, transform .15s;
+}
+
+.btn-primary:hover {
+    background: var(--primary-dk);
+    border-color: var(--primary-dk);
+    transform: translateY(-1px);
+}
+
+/* ---------- Participants list ---------- */
+.participant-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: .7rem 1rem;
+    border-bottom: 1px solid #eee;
+    transition: background .15s;
+}
+
+.participant-item:last-child { border-bottom: none; }
+.participant-item:hover { background: var(--accent); border-radius: .3rem; }
+
+.participant-avatar {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: var(--primary);
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: .95rem;
+    flex-shrink: 0;
+}
+
+.participant-info .name  { font-weight: 600; font-size: .95rem; }
+.participant-info .city  { font-size: .8rem; color: var(--muted); }
+
+/* ---------- Alerts ---------- */
+.alert { border-radius: var(--radius); font-weight: 500; }
+
+/* ---------- Admin table ---------- */
+.table-admin th {
+    background: #343a40;
+    color: var(--white);
+    font-size: .82rem;
+    text-transform: uppercase;
+    letter-spacing: .04em;
+    white-space: nowrap;
+}
+
+.table-admin td { vertical-align: middle; font-size: .88rem; }
+
+/* ---------- Admin login ---------- */
+.login-wrapper {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #1a73e8 0%, #0d47a1 100%);
+}
+
+.login-card {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 1rem;
+    box-shadow: 0 8px 32px rgba(0,0,0,.25);
+    padding: 2.5rem 2rem;
+    background: var(--white);
+}
+
+.login-card .logo { text-align: center; margin-bottom: 1.5rem; }
+.login-card .logo i { font-size: 2.8rem; color: var(--primary); }
+
+/* ---------- Footer ---------- */
+footer {
+    background: #343a40;
+    color: #adb5bd;
+    text-align: center;
+    padding: 1.2rem;
+    font-size: .85rem;
+    margin-top: 3rem;
+}
+
+/* ---------- Progress bar (spots) ---------- */
+.spots-bar {
+    height: 10px;
+    border-radius: 5px;
+    background: #dee2e6;
+    overflow: hidden;
+    margin-top: .4rem;
+}
+
+.spots-bar-fill {
+    height: 100%;
+    border-radius: 5px;
+    background: var(--primary);
+    transition: width .5s ease;
+}
+
+.spots-bar-fill.warning { background: #ffc107; }
+.spots-bar-fill.danger  { background: var(--danger); }
+
+/* ---------- Responsive tweaks ---------- */
+@media (max-width: 576px) {
+    .hero { padding: 2.5rem 1rem 2rem; }
+    .login-card { padding: 1.8rem 1.2rem; }
+    .table-responsive { font-size: .78rem; }
+}
